@@ -1,0 +1,56 @@
+.navbar {
+  min-height: 40px;
+}
+
+.navbar-default {
+  background: transparent;
+  border: 0;
+  margin-bottom: 0;
+}
+
+.navbar-nav > li {
+  background: #000000;
+
+  a{
+    padding: 10px;
+  }
+}
+
+.jumbotron {
+  padding: 48px 0 36px;
+  margin-top: -40px;
+  height: 180px;
+  background: url('/assets/upper.png') no-repeat;
+  background-size: 100% 100%;
+
+ }
+
+/* link */
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFFF;
+  font-size: 20px;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #000000;
+  font-size: 20px;
+}
+
+.list-group-item {
+  padding-left: 0;
+}
+
+.navbar-inner {
+  background:transparent;
+
+  color: #FFFFFF;
+}
+
+.navbar-right { margin-right: 40px;}
+
+html, body {
+  background: url("/assets/bottom.png")no-repeat scroll 0 0 / 100% 100% transparent !important;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

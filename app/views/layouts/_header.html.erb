@@ -1,0 +1,39 @@
+
+
+<div class="header">
+  <div class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+
+        <div class="navbar-collapse collapse">
+
+          <ul class="nav navbar-nav navbar-left ">
+
+            <li>
+              <%= link_to "Home", pages_home_path %>
+            </li></ul></div></div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+            <li>
+              <%= link_to "Profile", edit_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+            </li>
+        <% else %>
+            <li>
+              <%= link_to "Sign Up", new_user_registration_path %>
+            </li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+
+        <% end %>
+      </ul>
+
+    </div>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+
+    </div>
+  </div>
+</div>

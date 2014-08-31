@@ -8,7 +8,18 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
 
+<%= render "layouts/header" %>
+  <div align="center">
+    <div class="well well-lg">
+<%= yield %>
+</div>
+
+  <div class="footer">
+    <p>&copy; Company 2014</p>
+  </div>
+
+</div> <!-- /container -->
 </body>
 </html>
