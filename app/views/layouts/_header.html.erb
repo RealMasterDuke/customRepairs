@@ -11,7 +11,12 @@
 
             <li>
               <%= link_to "Home", pages_home_path %>
-            </li></ul></div></div>
+            </li>
+            <li>
+              <%= link_to "Products", categories_path %>
+            </li>
+
+          </ul></div></div>
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
