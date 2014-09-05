@@ -1,4 +1,11 @@
 CustomRepairs::Application.routes.draw do
+  devise_for :admins
+  resources :products
+
+  resources :categories do
+    resources :products
+  end
+
   get "pages/home"
 #  get "product/name:string"
   devise_for :users

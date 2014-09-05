@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>CustomRepairs</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,16 +10,24 @@
 
 <div class="container">
 
-<%= render "layouts/header" %>
+  <%= render "layouts/header" %>
   <div align="center">
     <div class="well well-lg">
-<%= yield %>
-</div>
+      <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </div>
 
-  <div class="footer">
-    <p>&copy; Company 2014</p>
+    <div class="footer">
+      <p>&copy; Company 2014</p>
+    </div>
+
   </div>
-
-</div> <!-- /container -->
+  <!-- /container -->
+</div>
 </body>
 </html>

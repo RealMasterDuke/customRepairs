@@ -1,0 +1,50 @@
+<% if current_user.try(:admin?) %>
+        <div class="row">
+          <h1>Listing categories</h1>
+
+          <% @categories.each do |category| %>
+              <div class="span2">
+                <%= image_tag category.image_url(:thumb) if category.image.present? %>
+                <h3><%= category.title %></h3>
+
+                <p>
+                  <%= truncate(category.text, length: 80, omission: "...") %>
+                </p>
+
+                <p>
+                  <%= link_to 'Show', category, :class => "btn btn-default" %>
+                  <%= link_to 'Edit', edit_category_path(category), :class => "btn btn-default" %>
+                  <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
+                </p>
+              </div>
+          <% end %>
+
+        </div>
+
+        <div class="span2">
+          <%= link_to 'New Category', new_category_path %>
+        </div>
+    <% else %>
+        <div class="row">
+          <h1>Listing categories</h1>
+
+          <% @categories.each do |category| %>
+              <div class="span2">
+                <%= image_tag category.image_url(:thumb) if category.image.present? %>
+                <h3><%= category.title %></h3>
+
+                <p>
+                  <%= truncate(category.text, length: 80, omission: "...") %>
+                </p>
+
+                <p>
+                  <%= link_to 'Show', category, :class => "btn btn-default" %>
+                </p>
+              </div>
+          <% end %>
+
+        </div>
+
+    <% end %>
+
+

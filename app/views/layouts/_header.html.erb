@@ -33,7 +33,10 @@
     </div>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-
+      <p class="navbar-text pull-right">
+        <% if user_signed_in? %>
+            Logged in as <strong><%= current_user.email %></strong>.
+        <% end %></p>
     </div>
   </div>
 </div>
