@@ -1,29 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+  <div class="span9">
+    <%= image_tag @product.image_url(:thumb) if @product.image.present? %>
+  </div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @product.text %>
-</p>
+  <div class="span9">
+    <%= @product.title %>
+  </div>
 
-<p>
-  <strong>Category:</strong>
-  <%= @product.category_id %>
-</p>
+  <div class="span9">
+    <%= @product.text %>
+  </div>
 
-<p>
-  <strong>Picture:</strong>
-  <%= @product.image %>
-</p>
+  <div class="span9">
+    <%= @product.price %>
+  </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', category_path(@product.category_id) %>
+<div class="span2">
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', category_path(@product.category_id) %>
+
+</div>
