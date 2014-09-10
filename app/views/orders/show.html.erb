@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Id:</strong>
-  <%= @order.id %>
-</p>
+<h1>Order <%= @order.order_number %></h1>
 
-<p>
-  <strong>Total:</strong>
-  <%= @order.total %>
-</p>
+<table id="order" class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>Customer Name</th>
+    <th>Total</th>
+    <th>2CO Order Number</th>
+    <th>Status</th>
+  </tr>
+    <tr class="<%= cycle :odd, :even %>">
+      <td><%= @order.id %></td>
+      <td><%= @order.card_holder_name %></td>
+      <td><%= @order.total %></td>
+      <td><%= @order.order_number %></td>
+      <td><%= @order.status %></td>
+    </tr>
+</table>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

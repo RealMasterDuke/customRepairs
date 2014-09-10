@@ -18,6 +18,11 @@
                 <p>
                   <%= link_to 'View Details', product, :class => "btn btn-default" %>
                 </p>
+
+                <%= form_tag(line_items_path, :method => "post") do %>
+                    <%= hidden_field_tag(:product_id, product.id) %>
+                    <%= submit_tag("Add to Cart") %>
+                <% end %>
               </div>
           <% end %>
 

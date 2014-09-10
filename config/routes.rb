@@ -1,9 +1,9 @@
 CustomRepairs::Application.routes.draw do
+  resources :orders
+
   resources :line_items
 
   resources :carts
-
-  resources :orders
 
   devise_for :admins
   resources :products

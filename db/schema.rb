@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905125158) do
+ActiveRecord::Schema.define(version: 20140910153143) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20140905125158) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "carts", force: true do |t|
+    t.datetime "purchased_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status"
+  end
+
   create_table "categories", force: true do |t|
     t.string   "title"
     t.text     "text"
@@ -40,6 +47,24 @@ ActiveRecord::Schema.define(version: 20140905125158) do
   end
 
   create_table "categories_products_joins", force: true do |t|
+  end
+
+  create_table "line_items", force: true do |t|
+    t.decimal  "unit_price"
+    t.decimal  "product_id"
+    t.integer  "cart_id"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.decimal  "total"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "card_holder_name"
+    t.string   "order_number"
+    t.string   "status"
   end
 
   create_table "products", force: true do |t|
