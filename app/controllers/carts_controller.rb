@@ -49,8 +49,34 @@ class CartsController < ApplicationController
   def destroy
     @cart.destroy
     respond_to do |format|
-      format.html { redirect_to carts_url }
+      format.html { redirect_to cart_path }
       format.json { head :no_content }
+    end
+  end
+
+  def return
+    @notification = Twocheckout::ValidateResponse.purchase({:sid => 1817037, :secret => "tango",
+                                                            :order_number => params['order_number'], :total => params['total'], :key => params['key']})
+
+    @cart = Cart.find(params['merchant_order_id'])
+    begin
+      if @notification[:code] == "PASS"
+        @cart.status = 'success'
+        @cart.purchased_at = Time.now
+        @order = Order.create(:total => params['total'],
+                              :card_holder_name => params['card_holder_name'],
+                              :status => 'pending',
+                              :order_number => params['order_number'])
+        reset_session
+        flash[:notice] = "Your order was successful! We will contact you directly to confirm before delivery."
+        redirect_to root_url
+      else
+        @cart.status = "failed"
+        flash[:notice] = "Error validating order, please contact us for assistance."
+        redirect_to root_url
+      end
+    ensure
+      @cart.save
     end
   end
 

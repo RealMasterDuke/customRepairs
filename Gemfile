@@ -43,4 +43,6 @@ gem 'carrierwave'
 
 gem 'mini_magick', '3.8.0'
 
+gem 'twocheckout'
+
 

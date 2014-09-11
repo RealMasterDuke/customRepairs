@@ -8,6 +8,7 @@
     <th>Qty</th>
     <th class="price">Unit Price</th>
     <th class="price">Full Price</th>
+    <th>Entfernen</th>
   </tr>
   <% for line_item in @cart.line_items %>
       <tr class="<%= cycle :odd, :even %>">
@@ -15,6 +16,7 @@
         <td class="qty"><%= line_item.quantity %></td>
         <td class="price"><%= number_to_currency(line_item.unit_price) %></td>
         <td class="price"><%= number_to_currency(line_item.full_price) %></td>
+        <td><%= link_to 'Delete', line_item, confirm: 'Are you sure?', method: :delete %></td>
       </tr>
   <% end %>
   <tr>
@@ -23,3 +25,15 @@
     </td>
   </tr>
 </table>
+<% @params = {'sid' => 1817037, 'mode' => '2CO', 'merchant_order_id' => @cart.id} %>
+<% i=0 %>
+<% for line_item in @cart.line_items %>
+    <% @params['li_'+i.to_s+'_product_id'] = line_item.product.id.to_s %>
+    <% @params['li_'+i.to_s+'_name'] = line_item.product.title %>
+    <% @params['li_'+i.to_s+'_price'] = line_item.product.price %>
+    <% @params['li_'+i.to_s+'_quantity'] = line_item.quantity.to_s %>
+    <% i+=1 %>
+<% end %>
+
+<% @form = Twocheckout::Checkout.form(@params) %>
+<%= @form.html_safe %>
