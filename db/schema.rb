@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140910153143) do
+ActiveRecord::Schema.define(version: 20140913115551) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20140910153143) do
     t.string   "card_holder_name"
     t.string   "order_number"
     t.string   "status"
+    t.integer  "user_id"
   end
 
   create_table "products", force: true do |t|

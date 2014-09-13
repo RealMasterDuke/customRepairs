@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
 
+
   # GET /carts
   # GET /carts.json
   def index
@@ -63,13 +64,14 @@ class CartsController < ApplicationController
       # if @notification[:code] == "PASS"
         @cart.status = 'success'
         @cart.purchased_at = Time.now
-        @order = Order.create(:total => params['total'],
+        @order = current_user.orders.create(:total => params['total'],
                               :card_holder_name => params['card_holder_name'],
                               :status => 'pending',
-                              :order_number => params['order_number'])
+                              :order_number => params['order_number'],
+                              :user_id => current_user.id)
         reset_session
         flash[:notice] = "Your order was successful! We will contact you directly to confirm before delivery."
-        redirect_to root_url
+        redirect_to root_path
       # else
       #   @cart.status = "failed"
       #   flash[:notice] = "Error validating order, please contact us for assistance."
