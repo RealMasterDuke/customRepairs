@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/iammyr/letsrate.git
+  revision: 15991d57865eab3fe6272b2b22a7552b7c1aab8c
+  specs:
+    letsrate (1.0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -170,6 +176,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 1.2)
   jquery-rails
+  letsrate!
   letter_opener
   mini_magick (= 3.8.0)
   paperclip

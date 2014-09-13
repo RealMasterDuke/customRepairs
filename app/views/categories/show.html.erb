@@ -24,6 +24,14 @@
                 <%= submit_tag("Add to Cart") %>
             <% end %>
           </div>
+
+          <div class="span9">
+            <p>
+              <strong>Rating:</strong><br/>
+              Service : <%= rating_for product, "Service" %> <br/>
+            </p>
+            <hr/>
+          </div>
       <% end %>
 
     </div>
@@ -88,13 +96,29 @@
                 <%= hidden_field_tag(:product_id, product.id) %>
                 <%= submit_tag("Add to Cart") %>
             <% end %>
-      </div>
-<% end %>
-</div>
+          </div>
 
-<div class="span2">
-  <%= link_to 'Back', categories_path %>
-</div>
+          <div class="span9">
+            <p>
+              <strong>Rating:</strong><br/>
+              Service : <%= rating_for product, "Service" %> <br/>
+            </p>
+            <hr/>
+            <% if user_signed_in? %>
+                <p>
+                  <strong>Your votes:</strong><br/>
+                  Service : <%= rating_for_user product, current_user, "Service", :star => 7 %>
+                </p>
+            <% end %>
+            <hr/>
+          </div>
+
+      <% end %>
+    </div>
+
+    <div class="span2">
+      <%= link_to 'Back', categories_path %>
+    </div>
 <% end %>
 
 
