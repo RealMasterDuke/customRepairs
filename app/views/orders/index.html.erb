@@ -20,10 +20,6 @@
         <td><%= order.total %></td>
         <td><%= order.order_number %></td>
         <td><%= order.status %></td>
-        <td>
-          <%= link_to 'Destroy', order_path(order), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-          <%= link_to 'Refund', refund_path(order), :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-        </td>
       </tr>
     <% end %>
   </tbody>
