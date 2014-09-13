@@ -2,9 +2,19 @@
 <div align="center">
 <div class="well well-lg">
 
-  <h1>Welcome</h1>
-  <h1>to</h1>
-  <h1>customRepair</h1>
-  <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p></div>
+  <h1>Welcome <%= current_user.email %></h1>
+
+  <% if !user_signed_in? %>
+      <h1>to</h1>
+      <h1>customRepair</h1>
+      <p> <%= link_to 'Sign up today', new_user_registration_path, :class => "btn btn-lg btn-success"  %></p>
+  <% else %>
+      <p>
+        <%= link_to 'Products', products_path, :class => "btn btn-lg btn-test"  %>
+        <%= link_to 'Orders', orders_path, :class => "btn btn-lg btn-test"  %>
+      </p>
+  <% end %>
+
+</div>
 
 </div>

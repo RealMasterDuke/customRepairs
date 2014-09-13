@@ -1,6 +1,6 @@
 <% if current_user.try(:admin?) %>
     <div class="row">
-      <p id="notice"><%= notice %></p>
+      <!--<p id="notice"><%= notice %></p>-->
 
       <div class="span9">
         <%= @category.title %>
@@ -82,6 +82,7 @@
 
             <p>
               <%= link_to 'View Details', product, :class => "btn btn-default" %>
+
             </p>
             <%= form_tag(line_items_path, :method => "post") do %>
                 <%= hidden_field_tag(:product_id, product.id) %>

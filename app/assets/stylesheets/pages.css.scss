@@ -32,7 +32,8 @@
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #000000;
+  color: #FFFFFF;
+  text-decoration: underline;
   font-size: 20px;
 }
 
@@ -47,6 +48,13 @@
 }
 
 .navbar-right { margin-right: 40px;}
+
+.navbar-text.pull-right {
+  color: #FFFFFF;
+  font-size: 17px;
+  padding-top: 80px;
+  margin-right: -22px;
+}
 
 html, body {
   background: url("/assets/bottom.png")no-repeat scroll 0 0 / 100% 100% transparent !important;
