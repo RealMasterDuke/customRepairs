@@ -1,4 +1,23 @@
 CustomRepairs::Application.routes.draw do
+  resources :orders
+
+  resources :line_items
+
+  resources :carts
+
+  devise_for :admins
+  resources :products
+
+  resources :categories do
+    resources :products
+  end
+
+  match '/return'=>'carts#return', :via => [:get]
+
+  match '/notification' => 'orders#notification', :via => [:get]
+
+  match 'orders/:id/refund' => 'orders#refund', :via => [:get], :as => 'refund'
+
   get "pages/home"
 #  get "product/name:string"
   devise_for :users

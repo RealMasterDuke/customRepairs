@@ -7,7 +7,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.8'
 
 gem 'figaro'
-gem 'mysql2'
+gem 'sqlite3'
 gem 'actionmailer'
 
 gem 'sass-rails', '~> 4.0.2'
@@ -38,3 +38,11 @@ gem 'paperclip'
 gem 'debugger', group: [:development, :test]
 gem 'better_errors', group: [:development, :test]
 gem "letter_opener", :group => :development
+
+gem 'carrierwave'
+
+gem 'mini_magick', '3.8.0'
+
+gem 'twocheckout'
+
+
