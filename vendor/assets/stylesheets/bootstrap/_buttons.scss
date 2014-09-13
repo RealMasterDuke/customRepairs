@@ -66,10 +66,23 @@
 .btn-danger {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
+
 // Success appears as green
 .btn-success {
   @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
 }
+
+
+
+// Success appears as green
+.btn-test {
+  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+  color: #FFFFFF;
+  margin: 20px;
+
+}
+
+
 // Info appears as blue-green
 .btn-info {
   @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
