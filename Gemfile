@@ -45,4 +45,4 @@ gem 'mini_magick', '3.8.0'
 
 gem 'twocheckout'
 
-
+gem 'letsrate', :git => 'git://github.com/iammyr/letsrate.git'

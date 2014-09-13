@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
   mount_uploader :image, PictureUploader
+  letsrate_rateable "Service"
+
 
   belongs_to :category
 
