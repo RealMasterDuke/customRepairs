@@ -20,12 +20,14 @@
     <%= f.text_area :text %>
   </div>
   <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+    <%= f.hidden_field :category_id %>
   </div>
   <div class="field">
+    <div class="span9">
+      <%= image_tag @product.image_url(:thumb) if @product.image.present? %>
+    </div>
     <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= f.file_field :image %>
   </div>
   <div class="field">
     <%= f.label :price %><br>

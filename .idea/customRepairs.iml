@@ -155,6 +155,7 @@
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v3.1.2, RVM: ruby-2.0.0-p481 [customRepairs_rails_4_0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.8.1, RVM: ruby-2.0.0-p481 [customRepairs_rails_4_0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="launchy (v2.4.2, RVM: ruby-2.0.0-p481 [customRepairs_rails_4_0]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="letsrate (v1.0.9@15991d, RVM: ruby-2.0.0-p481 [customRepairs_rails_4_0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="letter_opener (v1.2.0, RVM: ruby-2.0.0-p481 [customRepairs_rails_4_0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.5.4, RVM: ruby-2.0.0-p481 [customRepairs_rails_4_0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.25.1, RVM: ruby-2.0.0-p481 [customRepairs_rails_4_0]) [gem]" level="application" />

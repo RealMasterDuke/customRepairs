@@ -17,6 +17,7 @@
 
             <p>
               <%= link_to 'View Details', product, :class => "btn btn-default" %>
+              <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
             </p>
 
             <%= form_tag(line_items_path, :method => "post") do %>
@@ -51,6 +52,11 @@
             <%= f.label :text %>
             <br>
             <%= f.text_area :text %>
+          </div>
+          <div class="field">
+            <%= f.label :price %>
+            <br>
+            <%= f.text_field :price %>
           </div>
           <div class="field">
             <%= f.hidden_field :category_id %>
