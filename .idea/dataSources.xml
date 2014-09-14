@@ -7,7 +7,7 @@
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
-    <data-source source="LOCAL" name="Rails customRepairs: test" uuid="9afa44ce-1430-4628-905d-d02de5e01515">
+    <data-source source="LOCAL" name="Rails customRepairs: test" uuid="38b64ec1-b0b2-47da-9fb5-498acf192f4c">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>

@@ -1,10 +1,12 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
+
   # GET /orders
   # GET /orders.json
   def index
     if current_user.try(:admin?)
+
       @orders = Order.all
     else
       @orders = current_user.orders.all

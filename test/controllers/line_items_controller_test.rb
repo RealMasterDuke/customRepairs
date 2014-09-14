@@ -6,8 +6,8 @@ class LineItemsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
-    assert_response :success
+   get :index
+   assert_response :success
     assert_not_nil assigns(:line_items)
   end
 
@@ -18,7 +18,7 @@ class LineItemsControllerTest < ActionController::TestCase
 
   test "should create line_item" do
     assert_difference('LineItem.count') do
-      post :create, line_item: { cart_id: @line_item.cart_id, product_id: @line_item.product_id, quantity: @line_item.quantity, unit_price: @line_item.unit_price }
+      post :create, @params= { cart_id: @line_item.cart_id, product_id: @line_item.product_id, quantity: @line_item.quantity, unit_price: @line_item.unit_price }
     end
 
     assert_redirected_to line_item_path(assigns(:line_item))
