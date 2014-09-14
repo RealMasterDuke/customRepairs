@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
 
-    @product = Product.find(params[:product_id])
+    @product = Product.find(comment_params[:product_id])
     @comment = Comment.new(comment_params)
 
     respond_to do |format|
