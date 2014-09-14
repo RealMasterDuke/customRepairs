@@ -7,9 +7,6 @@ applications:
   domain: de.a9sapp.eu
   path: .
   buildpack: https://github.com/cloudfoundry/heroku-buildpack-ruby.git
-  env:
-      RAILS_ENV: test
-      RACK_ENV: test
   services:
-      - postgresql-customRepairs
-      - swift-customRepairs
+    - postgresql-customRepairs
+    - swift-customRepairs

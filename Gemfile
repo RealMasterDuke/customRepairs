@@ -8,11 +8,12 @@ gem 'rails', '4.0.8'
 
 gem 'figaro'
 
-group :development do
-  gem 'sqlite3'
-end
+gem 'sqlite3'
+
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
+
 end
 gem 'actionmailer'
 
@@ -60,4 +61,5 @@ gem 'twocheckout'
 
 gem 'letsrate', :git => 'git://github.com/iammyr/letsrate.git'
 
-gem 'rails_12factor'
+
+gem 'bootstrap-sass', '~> 3.2.0.2'
