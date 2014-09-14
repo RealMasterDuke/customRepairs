@@ -21,7 +21,8 @@ class LineItemsControllerTest < ActionController::TestCase
       post :create, @params= { cart_id: @line_item.cart_id, product_id: @line_item.product_id, quantity: @line_item.quantity, unit_price: @line_item.unit_price }
     end
 
-    assert_redirected_to line_item_path(assigns(:line_item))
+   # assert_redirected_to line_item_path(assigns(:line_item))
+    assert_redirected_to cart_path(assigns(:line_item))
   end
 
   test "should show line_item" do

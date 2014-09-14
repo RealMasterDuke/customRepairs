@@ -7,6 +7,3 @@ applications:
   domain: de.a9sapp.eu
   buildpack: https://github.com/cloudfoundry/heroku-buildpack-ruby.git
   path: .
-  env: 
-    RAILS_ENV: production
-    RACK_ENV: production
