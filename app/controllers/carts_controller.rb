@@ -21,14 +21,26 @@ class CartsController < ApplicationController
 
   # GET /carts/1/edit
   def edit
-    @cart = Cart.find(params[:id])
+   # @cart = Cart.find(params[:id])
 
   end
 
   # POST /carts
   # POST /carts.json
   def create
-    @cart = Cart.new(params[:cart])
+    @cart = Cart.new(cart_params)
+
+    respond_to do |format|
+      if @cart.save
+        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @cart }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @cart.errors, status: :unprocessable_entity }
+      end
+    end
+
+
   end
 
   # PATCH/PUT /carts/1
@@ -50,7 +62,7 @@ class CartsController < ApplicationController
   def destroy
     @cart.destroy
     respond_to do |format|
-      format.html { redirect_to cart_path }
+      format.html { redirect_to carts_path }
       format.json { head :no_content }
     end
   end
