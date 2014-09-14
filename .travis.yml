@@ -1,0 +1,12 @@
+language: ruby
+script: 'true'
+deploy:
+  provider: cloudfoundry
+  target: https://api.de.a9s.eu
+  username: alex.kurginski@web.de
+  password:
+    secure: !!rubymasters??
+  organization: alex_kurginski_web_de
+  space: test
+  on:
+    repo: arliebhardt/customRepairs

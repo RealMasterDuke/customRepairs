@@ -7,7 +7,13 @@ ruby '2.0.0'
 gem 'rails', '4.0.8'
 
 gem 'figaro'
-gem 'sqlite3'
+
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 gem 'actionmailer'
 
 gem 'sass-rails', '~> 4.0.2'
@@ -53,3 +59,5 @@ gem 'mini_magick', '3.8.0'
 gem 'twocheckout'
 
 gem 'letsrate', :git => 'git://github.com/iammyr/letsrate.git'
+
+gem 'rails_12factor'

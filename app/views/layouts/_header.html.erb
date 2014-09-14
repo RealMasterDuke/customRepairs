@@ -65,12 +65,12 @@
                   <%= link_to "Home", pages_home_path %>
                 </li>
                 <li>
-                  <%= link_to "Products", categories_path %>
+                  <%= link_to "Services", categories_path %>
                 </li>
                 <% if user_signed_in? %>
                     <li><%= link_to "Orders", orders_path %></li>
                     <% if session[:cart_id] %>
-                        <li><%= link_to "Current Cart", {:controller => "carts", :action => "show", :id => session[:cart_id]} %></li>
+                        <li><%= link_to "Current Cart", {:controller => 'carts', :action => 'show', :id => session[:cart_id]} %></li>
                     <% end %>
                 <% end %>
 
