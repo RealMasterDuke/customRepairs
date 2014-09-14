@@ -10,7 +10,7 @@
   <% else %>
       <h1>Welcome <%= current_user.email %></h1>
       <p>
-        <%= link_to 'Products', products_path, :class => "btn btn-lg btn-test"  %>
+        <%= link_to 'Services', categories_path, :class => "btn btn-lg btn-test"  %>
         <%= link_to 'Orders', orders_path, :class => "btn btn-lg btn-test"  %>
       </p>
   <% end %>
