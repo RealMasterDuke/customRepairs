@@ -1,7 +1,7 @@
 CustomRepairs::Application.routes.draw do
 
-  post '/rate' => 'rater#create', :as => 'rate'
 
+  post '/rate' => 'rater#create', :as => 'rate'
   resources :orders
 
   resources :line_items
@@ -10,7 +10,11 @@ CustomRepairs::Application.routes.draw do
 
   devise_for :admins
 
-  resources :products
+  resources :comments
+
+  resources :products do
+    resources :comments
+  end
 
   resources :categories do
     resources :products
