@@ -7,8 +7,10 @@ ruby '2.0.0'
 gem 'rails', '4.0.8'
 
 gem 'figaro'
+group :development do
+  gem 'sqlite3'
+end
 
-gem 'sqlite3'
 
 group :production do
   gem 'pg'
