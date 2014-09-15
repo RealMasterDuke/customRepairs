@@ -5,26 +5,22 @@ ruby '2.0.0'
 #ruby-gemset=customRepairs_rails_4_0
 
 gem 'rails', '4.0.8'
-
+gem 'rb-readline'
 gem 'figaro'
-group :development do
-  gem 'sqlite3'
-end
-
-
+gem 'sqlite3', group: [:development, :test]
 group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-
+  gem 'mysql2'
 end
+
 gem 'actionmailer'
 
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass'
 gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 group :test do
-  gem 'rspec', '2.2.0'
   gem 'webrat', '0.7.1'
   gem 'factory_girl_rails', '1.0'
 end
@@ -50,7 +46,7 @@ gem 'paperclip'
 # gem 'capistrano', group: :development
 
 # Use debugger
-#gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 gem "binding_of_caller"
 gem 'better_errors', group: [:development, :test]
 gem "letter_opener", :group => :development
@@ -63,5 +59,4 @@ gem 'twocheckout'
 
 gem 'letsrate', :git => 'git://github.com/iammyr/letsrate.git'
 
-
-gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'rails_12factor'

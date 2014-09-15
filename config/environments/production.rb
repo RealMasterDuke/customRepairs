@@ -1,5 +1,16 @@
 CustomRepairs::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+#config.action_mailer.delivery_method = :smtp
+config.action_mailer.delivery_method = :letter_opener
+config.action_mailer.smtp_settings = {
+                :address                => "host282.hostmonster.com",
+                :port                   => 26,
+                :domain                 => "dead-body-flashers.com",
+                :user_name              => ENV['SMTP_USER'],
+                :password               => ENV['SMTP_PASS'],
+                :authentication         => "plain",
+        :enable_starttls_auto   => false
+}
 
   # Code is not reloaded between requests.
   config.cache_classes = true
