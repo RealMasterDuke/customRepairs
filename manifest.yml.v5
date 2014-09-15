@@ -1,0 +1,20 @@
+---
+applications:
+- name: customRepairs
+  memory: 512M
+  instances: 1
+  host: customRepairs
+  domain: de.a9sapp.eu
+  path: .
+  buildpack: https://github.com/cloudfoundry/heroku-buildpack-ruby.git
+  services:
+    postgresql-customRepairs:
+      label: postgresql
+      provider: core
+      version: '9.1'
+      plan: Pluto-free
+    swift-customRepairs:
+      label: swift
+      provider: core
+      version: '1.0'
+      plan: free
