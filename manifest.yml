@@ -1,9 +1,8 @@
 ---
 applications:
 - name: customRepairs
-  memory: 512M
+  memory: 256M
   instances: 1
-  host: customRepairs
+  host: duke-customRepairs
   domain: de.a9sapp.eu
-  buildpack: https://github.com/cloudfoundry/heroku-buildpack-ruby.git
   path: .

@@ -1,3 +1,8 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
 .navbar {
   min-height: 40px;
 }
@@ -20,7 +25,7 @@
   padding: 48px 0 36px;
   margin-top: -40px;
   height: 180px;
-  background: url('http://duke-development.com/upper.png') no-repeat;
+  background: url('http://www.duke-development.com/upper.png') no-repeat;
   background-size: 100% 100%;
 
  }
@@ -47,7 +52,7 @@
   color: #FFFFFF;
 }
 
-.navbar-right { margin-right: 40px;}
+.navbar-right { margin-right: 0px; padding-right: 60px;}
 
 .navbar-text.pull-right {
   color: #FFFFFF;
@@ -57,7 +62,7 @@
 }
 
 html, body {
-  background: url("/assets/bottom.png")no-repeat scroll 0 0 / 100% 100% transparent !important;
+  background: url("http://www.duke-development.com/bottom.png")no-repeat scroll 0 0 / 100% 100% transparent !important;
   height: 100%;
   margin: 0;
   padding: 0;
